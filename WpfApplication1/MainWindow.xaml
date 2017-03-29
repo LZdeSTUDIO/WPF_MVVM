@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="WPF_MVVM" Height="350" Width="520"
+        MinHeight="350" MinWidth="520" 
+        >
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Content="save" x:Name="save" Margin="5"  Command="{Binding SaveCommend}"/>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="tb1" Grid.Row="0" Background="LightGray" Margin="4" FontSize="24" Text="{Binding Input1}"></TextBox>
+            <TextBox x:Name="tb2" Grid.Row="1" Background="LightGray" Margin="4" FontSize="24" Text="{Binding Input2}"></TextBox>
+            <TextBox x:Name="tb3" Grid.Row="2" Background="LightGray" Margin="4" FontSize="24" Text="{Binding Result}"></TextBox>
+            <Button VerticalAlignment="Center" HorizontalAlignment="Center" Width="240" Height="80" Grid.Row="3" Content="Click_To_Add" Command="{Binding AddComment}"/>
+        </Grid>
     </Grid>
 </Window>
